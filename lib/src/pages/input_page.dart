@@ -12,6 +12,7 @@ class _InputPageState extends State<InputPage> {
   String _nombre = '';
   String _email = '';
   String _fecha = '';
+  String _opcionSeleccionada = 'volar';
 
   List _poderes = ['volar', 'Rayos laser', 'fuerza']; 
 
@@ -139,20 +140,45 @@ class _InputPageState extends State<InputPage> {
 
   List <DropdownMenuItem<String>> getOpcionesDropdown() {
     List<DropdownMenuItem<String>> lista = new List();
+
+    _poderes.forEach((poder) { 
+
+      lista.add( DropdownMenuItem(
+        child: Text(poder),
+        value: poder,
+      ));
+    });
+    return lista;
   }
+
+
   Widget _crearDropdown() {
-    return DropdownButton(
-      items: [],
-      onChanged: (opt) {
-        print(opt);
-      }
+    return Row(
+      children: [
+        Icon(Icons.select_all),
+        SizedBox(width: 30.0),
+        Expanded(
+                  child: DropdownButton(
+            value: _opcionSeleccionada,
+            items: getOpcionesDropdown(),
+            onChanged: (opt) {
+              setState(() {
+                _opcionSeleccionada = opt;
+              });
+            }
+          ),
+        )
+      ],
     );
+    
+    
   }
 
   Widget _crearPersona() {
     return ListTile(
       title: Text('Nombre es: $_nombre'),
       subtitle: Text('Correo: $_email'),
+      trailing: Text(_opcionSeleccionada),
     );
   }
 }
