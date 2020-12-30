@@ -49,20 +49,20 @@ class HomePageTemp extends StatelessWidget {
     );
   }
 
-  List<Widget> _crearItems() {
+  // List<Widget> _crearItems() {
   
-  List<Widget> lista = new List<Widget>();
+  // List<Widget> lista = new List<Widget>();
   
-  for (Map opt in opciones) {
-    final tempWidget = ListTile(
-      title: Text(opt['title']),
-    );
+  // for (Map opt in opciones) {
+  //   final tempWidget = ListTile(
+  //     title: Text(opt['title']),
+  //   );
 
-    lista..add(tempWidget)
-         ..add( Divider() );
-  }
-    return lista;
-  }
+  //   lista..add(tempWidget)
+  //        ..add( Divider() );
+  // }
+  //   return lista;
+  // }
 
   List<Widget> _crearItemsCorta() {
 
