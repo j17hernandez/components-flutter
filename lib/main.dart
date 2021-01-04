@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: getAplicationRoutes(),
       onGenerateRoute: ( RouteSettings settings ) {
-        print('Ruta llamada: ${settings.name}');
+        // print('Ruta llamada: ${settings.name}');
         return MaterialPageRoute(
           builder: (BuildContext context) => AlertPage()
         );

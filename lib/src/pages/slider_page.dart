@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 
-
-
-
 class SliderPage extends StatefulWidget {
 
   @override
